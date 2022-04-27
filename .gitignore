@@ -1,0 +1,9 @@
+.hlx/*
+logs/*
+node_modules/*
+.vscode/*
+
+# OS Files
+.DS_Store
+
+.cache

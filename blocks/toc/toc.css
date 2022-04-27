@@ -1,0 +1,61 @@
+main .toc {
+    color: var(--category-color);
+    background-color: var(--category-bg-color);
+    text-decoration: none;
+    margin: 40px 0;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+main .toc a:any-link{
+    color: var(--category-color);
+    background-color: var(--category-bg-color);
+    text-decoration: none;
+}
+
+main .toc .toc-title {
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+main .toc ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+main .toc li {
+    counter-increment: li;
+    margin-left: 0;
+    font-size: 15px;
+    line-height: 26px;
+    position: relative;
+    padding-left: 30px;
+}
+
+main .toc li::before {
+    content: counter(li);
+    padding-right: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 900;
+    font-family: var(--font-heading-family);
+}
+
+@media (min-width: 900px) {
+    main .toc .toc-title {
+      font-size: 18px;
+    }
+
+    main .toc ol {
+        columns: 200px 2;        
+    }
+
+    main .toc li {
+        font-size: 17px;
+        line-height: 28px;
+    }
+}  
+  

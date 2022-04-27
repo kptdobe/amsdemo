@@ -1,0 +1,91 @@
+footer {
+  margin-top: 2rem;
+  padding: 2rem 2rem;
+  background-color: #464e3d;
+  font-size: 13px;
+  color: #b4baab;
+}
+
+footer .footer {
+  grid-template-areas: 'company' 'support' 'blog' 'social' 'links' 'brand' 'legal';
+}
+
+
+footer .footer ul {
+  list-style: none;
+  padding: 0;
+} 
+
+footer .footer li {
+  margin: 0;
+  padding: 3px 0;
+} 
+
+
+footer a:any-link {
+  color: #b4baab;
+  text-decoration: none;
+}
+
+footer .footer .company {
+  grid-area: company;
+}
+
+footer .footer .support {
+  grid-area: support;
+}
+
+footer .footer .links {
+  grid-area: links;
+}
+
+footer .footer .links ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer .footer .links li {
+  padding: 3px 5px;
+}
+
+footer .footer .social {
+  grid-area: social;
+  display: flex;
+  align-items: center;
+}
+
+footer .footer .social .icon {
+  padding: 4px;
+}
+
+footer .footer .brand {
+  grid-area: brand;
+}
+
+footer .footer .legal {
+  grid-area: legal;
+}
+
+footer .footer .blog {
+  grid-area: blog;
+}
+
+
+footer .footer {
+  max-width: 768px;
+  margin: auto;
+  display: grid;
+}
+
+footer .footer p {
+  margin: 0;
+}
+
+@media (min-width: 900px) {
+  footer .footer {
+    grid-template-areas: 'company support blog' 'links links social' 'brand brand brand' 'legal legal legal';
+  }
+}
+
+
+

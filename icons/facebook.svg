@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="14px" viewBox="0 0 7 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>icon-facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M4.27425056,15 L1.42465466,15 L1.42465466,8.30329283 L0,8.30329283 L0,5.99509218 L1.42465466,5.99509218 L1.42465466,4.6096146 C1.42465466,2.72683609 2.2285485,1.60714286 4.51269608,1.60714286 L6.41481496,1.60714286 L6.41481496,3.9153435 L5.22631307,3.9153435 C4.33701446,3.9153435 4.27797627,4.23796225 4.27797627,4.83973816 L4.27425056,5.99509218 L6.42857143,5.99509218 L6.17636944,8.30329283 L4.27425056,8.30329283 L4.27425056,15 Z" id="path-1"></path>
+    </defs>
+    <g id="Ready-for-Invision" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer---Desktop---1920x1080" transform="translate(-1555.000000, -450.000000)">
+            <g id="Subscribe-Group" transform="translate(1177.000000, 140.000000)">
+                <g id="Social-Media-Icons-and-Legal-Text" transform="translate(295.000000, 309.000000)">
+                    <g id="Icon/Social-Media-Icons" transform="translate(83.000000, 0.000000)">
+                        <g id="logo/social/left-aligned/facebook">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="logo/social/facebook" fill="#9CA393" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

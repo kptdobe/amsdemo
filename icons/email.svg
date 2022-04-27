@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="17px" viewBox="0 0 22 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="22" height="17" rx="2.5"></rect>
+    </defs>
+    <g id="Proofs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Blog-Theme-2019_Post-Page_Desktop" transform="translate(-1832.000000, -1054.000000)">
+            <g id="Newsletter-Signup" transform="translate(1816.000000, 1035.000000)">
+                <g id="Group" transform="translate(16.000000, 19.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <rect stroke="#9CA393" stroke-width="2.3" x="1.15" y="1.15" width="19.7" height="14.7" rx="2.5"></rect>
+                    <path d="M22.9171655,0.15 L-0.917165521,0.15 L11,10.4782101 L22.9171655,0.15 Z" id="Rectangle" stroke="#9CA393" stroke-width="2.3" fill-rule="nonzero" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,36 @@
+main .author {
+    padding-top: 50px;
+    border-top: 2px solid #DFDEDC;
+    margin-top: 50px;
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+main .author img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+main .author-description > p {
+    margin: 0;
+}
+
+@media (min-width: 900px) {
+    main .author {
+        flex-direction: unset;
+        text-align: unset;
+    }
+
+    main .author-image {
+        width: 130px;
+        flex: 0 0 130px;
+    }
+
+    main .author-description {
+        padding-top: 25px;
+    }
+        
+}

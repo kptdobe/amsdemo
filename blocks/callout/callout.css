@@ -1,0 +1,26 @@
+main .callout {
+  background-image: url(/styles/teal-cta.svg);
+  background-size: cover;
+  margin: 40px 0;
+  padding: 40px 30px;
+  text-align: center;
+  color: var(--category-color);
+  border-radius: 20px;
+  box-shadow: 0px 30px 60px -40px rgb(52 185 172 / 50%);
+}
+
+main .callout a.button {
+  background-color: var(--category-color);
+}
+
+main .callout h3 {
+  font-size: 36px;
+  font-family: var(--heading-font-family);
+  font-style: italic;
+}
+
+@media (min-width: 1200px) {
+  main .section > .callout-wrapper {
+    max-width: 1200px;
+  }  
+}

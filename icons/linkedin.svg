@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>icon-linkedin</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.3928571,15 L10.6183366,15 L10.6183366,10.649925 C10.6183366,9.6121348 10.6001447,8.27753555 9.17598091,8.27753555 C7.73154616,8.27753555 7.51168438,9.40853421 7.51168438,10.5754624 L7.51168438,15 L4.73976265,15 L4.73976265,6.05407132 L7.3999343,6.05407132 L7.3999343,7.277237 L7.43787735,7.277237 C7.80795203,6.5737475 8.71390732,5.83224561 10.0642641,5.83224561 C12.8736091,5.83224561 13.3928571,7.68443818 13.3928571,10.0937986 L13.3928571,15 Z M1.61024067,4.83194707 C0.71883888,4.83194707 0,4.10971173 0,3.2192846 C0,2.32937819 0.71883888,1.60714286 1.61024067,1.60714286 C2.49800409,1.60714286 3.21892204,2.32937819 3.21892204,3.2192846 C3.21892204,4.10971173 2.49800409,4.83194707 1.61024067,4.83194707 Z M0.220901319,15 L0.220901319,6.05407132 L2.99854049,6.05407132 L2.99854049,15 L0.220901319,15 Z" id="path-1"></path>
+    </defs>
+    <g id="Ready-for-Invision" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer---Desktop---1920x1080" transform="translate(-1660.000000, -450.000000)">
+            <g id="Subscribe-Group" transform="translate(1177.000000, 140.000000)">
+                <g id="Social-Media-Icons-and-Legal-Text" transform="translate(295.000000, 309.000000)">
+                    <g id="Icon/Social-Media-Icons" transform="translate(83.000000, 0.000000)">
+                        <g id="logo/social/left-aligned/linkedin" transform="translate(105.000000, 0.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="logo/linkedin" fill="#9CA393" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

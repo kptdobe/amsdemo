@@ -1,0 +1,56 @@
+main .author-container > div {
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+main .author-header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: var(--body-font-size-s);
+  line-height: var(--body-font-size-l);
+  color: var(--color-gray-600);
+}
+
+@media (min-width: 600px) {
+  main .author-header {
+    font-size: var(--body-font-size-m);
+    line-height: var(--body-font-size-xl);
+  }
+}
+
+main .author-header-container {
+  background-image: url(/styles/header-leaf.svg), linear-gradient(var(--color-gray-100), var(--color-gray-100) calc(400px + (100vw * 0.2)), white calc(100vw * 0.2));
+  background-position: 0 400px, top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+}
+
+main .author-header {
+  text-align: center;
+}
+
+main .author-header h1 {
+  font-family: var(--heading-font-family);
+  font-style: italic;
+  font-size: var(--heading-font-size-l);
+  color: var(--color-gray-700);
+}
+
+@media (min-width: 600px) {
+  main .author-header h1 {
+    font-size: var(--heading-font-size-xl);
+    line-height: var(--heading-font-size-xxl);
+  }
+}
+
+@media (min-width: 1024px) {
+  main .author-header h1 {
+    font-size: var(--heading-font-size-xxl);
+    line-height: 60px;
+  }
+}
+
+main .author-header h1::before {
+  content: 'Articles by ';
+}
