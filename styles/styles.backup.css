@@ -1,0 +1,395 @@
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+ :root {
+  --color-white: #FFF;
+  --color-gray-100: #F8F8F8;
+  --color-gray-200: #E8E8E8;
+  --color-gray-300: #D4D4D4;
+  --color-gray-400: #B6B6B6;
+  --color-gray-500: #909090;
+  --color-gray-600: #686868;
+  --color-gray-700: #444;
+  --color-gray-800: #242424;
+  --color-black: #000;
+  --color-brand-title: #000B1D;
+  --color-info-accent: #73c41d;
+  --color-info-accent-hover: #73c41d;
+  --color-info-accent-down: #73c41d;
+  --color-info-accent-light: #DEDEF9;
+
+  /* body */
+  --body-background-color: var(--color-white);
+  --body-alt-background-color: var(--color-gray-600);
+  --body-font-family: 'Lato', Arial, Helvetica, sans-serif;
+  --body-font-weight: 300;
+  --body-color: var(--color-black);
+  --body-line-height: 1.5;
+  --body-font-size-xxl: 1.75rem; /* 28px */
+  --body-font-size-xl: 1.375rem; /* 22px */
+  --body-font-size-l: 1.25rem; /* 20px */
+  --body-font-size-m: 1.125rem; /* 18px */
+  --body-font-size-s: 1rem; /* 16px */
+  --body-font-size-xs: 0.875rem; /* 14px */
+  --body-font-size-xxs: 0.75rem; /* 12px */
+
+  /* headings */
+  --heading-font-weight: 700;
+  --heading-color: var(--color-gray-800);
+  --heading-line-height: 1.25;
+  --heading-font-size-xxxl: 5rem; /* 80px */
+  --heading-font-size-xxl: 2.75rem; /* 44px */
+  --heading-font-size-xl: 2.25rem; /* 36px */
+  --heading-font-size-l: 1.75rem; /* 28px */
+  --heading-font-size-m: 1.5rem; /* 24px */
+  --heading-font-size-s: 1.25rem; /* 20px */
+  --heading-font-size-xs: 1.125rem; /* 18px */
+  --heading-font-size-xxs: 0.875rem; /* 14px */
+  --heading-font-family: 'Fira Sans', 'Trebuchet', sans-serif;
+
+  
+  /* details */
+  --detail-font-weight: 700;
+  --detail-color: var(--color-gray-600);
+  --detail-line-height: 1.25;
+  --detail-font-size-l: 1.25rem; /* 20px */
+  --detail-font-size-m: 1rem; /* 16px */
+  --detail-font-size-s: 0.75rem; /* 12px */
+}
+
+
+@media (min-width: 900px) {
+  :root {
+    --heading-font-size-xxxl: 3.75rem; /* 60px */
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --heading-font-size-xxxl: 2.75rem; /* 44px */
+  }
+}
+
+header {
+  height: 70px;
+}
+
+body {
+  background-color: var(--body-background-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  color: var(--body-color);
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+body.appear {
+  opacity: 1;
+}
+
+/* buttons */
+
+a.button:any-link {
+  text-decoration: none;
+  border-radius: 2rem;
+  border: 2px solid transparent;
+  padding: 17px 25px;
+  /* outline: none; (keep outline for a11n) */
+  text-align: center;
+  font-size: var(--body-font-size-m);
+  font-family: 'Fira Sans';
+  font-style: normal; 
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-white);
+  background-color: var(--color-info-accent);
+  margin: 16px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+a.button:hover, a.button:focus {
+  background-color: var(--color-info-accent-hover);
+}
+
+a.button.small:any-link {
+  padding: 8px 1.5rem;
+  font-size: var(--body-font-size-xxs);
+}
+
+a.button.large:any-link {
+  padding: 8px 1.2rem;
+  font-size: var(--body-font-size-m);
+}
+
+a.button.xlarge:any-link {
+  padding: 10px 1.4rem;
+  font-size: var(--body-font-size-l);
+}
+
+a.button.primary:any-link {
+  background-color: var(--color-gray-700);
+}
+
+a.button.primary:hover, a.button.primary:focus {
+  background-color: var(--color-gray-800);
+}
+
+a.button.secondary:any-link {
+  background-color: var(--color-gray-600);
+}
+
+a.button.secondary:hover, a.button.secondary:focus {
+  background-color: var(--color-gray-700);
+}
+
+a.button.light:any-link {
+  background-color: transparent;
+  color: var(--color-info-accent);
+  border: solid 2px var(--color-info-accent);
+}
+
+a.button.light:hover, a.button.light:focus {
+  background-color: var(--color-info-accent-hover);
+  color: var(--color-white);
+}
+
+a.button.primary.light:any-link {
+  color: var(--color-gray-700);
+  border-color: var(--color-gray-700);
+}
+
+a.button.primary.light:hover, a.button.primary.light:focus {
+  background-color: var(--color-gray-800);
+  border-color: var(--color-gray-800);
+  color: var(--color-white);
+}
+
+a.button.secondary.light:any-link {
+  color: var(--color-gray-600);
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+}
+
+a.button.secondary.light:hover, a.button.secondary.light:focus {
+  background-color: var(--color-gray-700);
+  border-color: var(--color-gray-700);
+  color: var(--color-white);
+}
+
+a.button > svg {
+  float: left;
+  display: inline;
+  width: 20px;
+  height: 20px;
+  margin: 8px 8px 8px 0;
+  fill: currentColor;
+  color: currentColor;
+}
+
+a.button > svg > use {
+  fill: currentColor;
+  color: currentColor;
+}
+
+/* headings and body */
+
+main {
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  margin: 0;
+  font-weight: var(--body-font-weight);
+}
+
+main p:not(:last-of-type) {
+  margin-bottom: 32px;
+}
+
+main h1, main h2, main h3, main h4, main h5, main h6 {
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+main h1 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-style: italic;
+}
+
+main h2 {
+  font-size: var(--heading-font-size-l);
+}
+
+main h3 {
+  font-size: var(--heading-font-size-m);
+}
+
+main h4 {
+  font-size: var(--heading-font-size-s);
+}
+
+main h5, main h6 {
+  font-size: var(--heading-font-size-xs);
+}
+
+main h1.hidden {
+  display: none;
+}
+
+@media (min-width:600px) {
+  main {
+    font-size: var(--body-font-size-l);
+  }
+
+  main h2 {
+    font-size: var(--heading-font-size-l);
+  }
+
+  main h3 {
+    font-size: var(--heading-font-size-l);
+  }
+
+  main h4 {
+    font-size: var(--heading-font-size-m);
+  }
+}
+
+/* links */
+
+main a:any-link {
+  color: var(--body-color);
+  line-height: var(--body-line-height);
+}
+
+main a.cta-link {
+  color: var(--color-info-accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+main a.cta-link:after {
+  content: " >";
+}
+
+main a.cta-link:hover {
+  color: var(--color-info-accent-hover);
+}
+
+main a.cta-link:active,
+main a.cta-link:focus {
+  color: var(--color-info-accent-down);
+}
+
+main img,
+main video {
+  max-width: 100%;
+}
+
+/* section wrapper */
+
+main .section {
+  margin-top: 64px;
+}
+
+main .section:first-of-type {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+main .section:last-of-type {
+  margin-bottom: 0;
+}
+
+main .section:first-of-type {
+  padding: 0;
+}
+
+@media (min-width:600px) {
+  main .section > div {
+    max-width: unset;
+  }
+}
+
+main .section > div:empty {
+  padding: 0;
+}
+
+main .section > div {
+  margin: auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 700px) {
+  main .section > div {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main .section > div > :not(div) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+main .section p.button-container {
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+p, dl, ol, ul, pre, blockquote {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* category colors */
+main {
+  --category-color: #1b7b7e; 
+  --category-bg-color: #e5fdff;
+}
+
+.category-voices-in-leadership main,
+.category-color-voices-in-leadership {
+  --category-color: #ce4537;
+  --category-bg-color: #fff5e5;
+}
+
+.category-product-announcements main, 
+div.category-color-product-announcements {
+  --category-color: #1d9336;
+  --category-bg-color: #edffc8;
+}
+
+.category-hiring main, 
+div.category-color-hiring {
+  --category-color: #b6800b;
+  --category-bg-color: #ffffe5;
+}
+
+
+/* above the fold CSS goes here to squash CLS */
+
+main .section[data-section-status='loading'], main .section[data-section-status='initialized'] {
+    display: none;
+  }
+
+main .featured-articles-container > div.default-content-wrapper {
+  padding: 64px;
+  text-align: center;
+}
+  
