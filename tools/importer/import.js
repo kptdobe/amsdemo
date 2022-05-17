@@ -189,7 +189,8 @@ const createImageBlocks = (main, document) => {
 const createTOC = (main, document) => {
   const toc = main.querySelector('.blogPostContentToc');
   if (toc) {
-    toc.replaceWith(WebImporter.DOMUtils.createTable([['TOC']], document));
+    const table = WebImporter.DOMUtils.createTable([['TOC']], document);
+    toc.replaceWith(table);
   }
 };
 
@@ -245,6 +246,15 @@ const makeProxySrcs = (main) => {
   });
 };
 
+const createHeroImage = (main, document) => {
+  const heroDiv = main.querySelector('.blogPostBanner__img');
+  if (heroDiv) {
+    const heroAsImage = WebImporter.DOMUtils.replaceBackgroundByImg(heroDiv, document);
+    const title = main.querySelector('h1');
+    if (title) title.before(heroAsImage);
+  }
+}
+
 export default {
   /**
    * Apply DOM operations to the provided document and return
@@ -253,7 +263,23 @@ export default {
    * @returns {HTMLElement} The root element
    */
   transformDOM: ({ document, html }) => {
+    const main = document.querySelector('.blogPostMain');
+
+    createTOC(main, document);
+    createHeroImage(main, document);
+    createCallouts(main, document);
+
+    createRelatedPostsBlock(main, document);
+    createEmbeds(main, document);
+    createImageBlocks(main, document);
+    createMetadata(main, document, html);
+    cleanupHeadings(main, document);
+    makeAbsoluteLinks(main);
+    makeProxySrcs(main);
+
     WebImporter.DOMUtils.remove(document, [
+      '.blogPostContent__meta',
+      '.blogPostContent__metaTop',
       'header',
       'NavbarMobile',
       '.blogSearchIcon__container',
@@ -265,32 +291,6 @@ export default {
       '.blogSocial',
       '.blogPostContentSubscribe',
       '.blogPostAuthor',
-    ]);
-
-    const main = document.querySelector('.blogPostMain');
-
-    cleanupHeadings(main, document);
-
-    const title = document.querySelector('h1');
-
-    let hero = document.querySelector('.blogPostBanner__img');
-    if (hero) {
-      hero = WebImporter.DOMUtils.replaceBackgroundByImg(hero, document);
-      if (title) hero.before(title);
-    }
-
-    createRelatedPostsBlock(main, document);
-    createEmbeds(main, document);
-    createCallouts(main, document);
-    createImageBlocks(main, document);
-    createTOC(main, document);
-    createMetadata(main, document, html);
-    makeAbsoluteLinks(main);
-    makeProxySrcs(main);
-
-    WebImporter.DOMUtils.remove(document, [
-      '.blogPostContent__meta',
-      '.blogPostContent__metaTop',
     ]);
 
     return main;
