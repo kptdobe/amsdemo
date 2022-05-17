@@ -9,8 +9,10 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+/* global WebImporter */
 /* eslint-disable no-console, class-methods-use-this */
 
+// eslint-disable-next-line no-unused-vars
 const cleanupName = (name) => {
   let n = name;
   const firstChar = n.charAt(0);
@@ -22,7 +24,7 @@ const cleanupName = (name) => {
     n = n.slice(0, -1);
   }
   return n;
-}
+};
 
 const createMetadata = (main, document, html) => {
   const meta = {};
@@ -45,6 +47,12 @@ const createMetadata = (main, document, html) => {
   const date = document.querySelector('[property="article:published_time"]');
   if (date) {
     meta['Publication Date'] = date.content.substring(0, date.content.indexOf('T'));
+  }
+
+  const updated = main.querySelector('.blogPostContent__metaModifiedDate');
+  if (updated && updated.textContent) {
+    const d = updated.textContent.replace('Updated ', '');
+    meta['Updated Date'] = new Date(d).toISOString().substring(0, 10);
   }
 
   const author = main.querySelector('[rel="author"]');
@@ -87,7 +95,7 @@ const createMetadata = (main, document, html) => {
   main.append(block);
 
   return meta;
-}
+};
 
 const createEmbeds = (main, document) => {
   main.querySelectorAll('iframe').forEach((embed) => {
@@ -100,16 +108,16 @@ const createEmbeds = (main, document) => {
       ], document));
     }
   });
-}
+};
 
 const createCallouts = (main, document) => {
-  main.querySelectorAll('.blogPostContent__ctaContainer').forEach((callout) => {
+  main.querySelectorAll('.blogPostContent__ctaContainer, .blogPostContent__quoteContainer').forEach((callout) => {
     const rows = [];
     let blockName = 'Callout';
 
-    if (callout.classList.contains('blogPostContent__ctaContainer--right')) {
+    if (callout.classList.contains('blogPostContent__ctaContainer--right') || callout.classList.contains('blogPostContent__quoteContainer--right')) {
       blockName += ' (right)';
-    } else if (callout.classList.contains('blogPostContent__ctaContainer--left')) {
+    } else if (callout.classList.contains('blogPostContent__ctaContainer--left') || callout.classList.contains('blogPostContent__quoteContainer--left')) {
       blockName += ' (left)';
     }
 
@@ -124,7 +132,7 @@ const createCallouts = (main, document) => {
       container.append(h);
     }
 
-    const sub = callout.querySelector('.blogPostContent__ctaSubheading');
+    const sub = callout.querySelector('.blogPostContent__ctaSubheading') || callout.querySelector('.blogPostContent__quote');
     if (sub) {
       const p = document.createElement('p');
       p.innerHTML = sub.innerHTML;
@@ -139,14 +147,51 @@ const createCallouts = (main, document) => {
     }
     callout.replaceWith(WebImporter.DOMUtils.createTable(rows, document));
   });
-}
+};
+
+const createImageBlocks = (main, document) => {
+  main.querySelectorAll('img.alignleft, img.alignright').forEach((img) => {
+    const rows = [];
+    let blockName = 'Image';
+
+    if (img.classList.contains('alignright')) {
+      blockName += ' (right)';
+    } else if (img.classList.contains('alignleft')) {
+      blockName += ' (left)';
+    }
+
+    rows.push([blockName]);
+    rows.push([img]);
+
+    img.parentNode.replaceWith(WebImporter.DOMUtils.createTable(rows, document));
+  });
+
+  main.querySelectorAll('.blogPostContent__imgContainer').forEach((div) => {
+    const img = div.querySelector('img');
+    if (img) {
+      const rows = [];
+      let blockName = 'Image';
+
+      if (div.classList.contains('blogPostContent__imgContainer--right')) {
+        blockName += ' (right)';
+      } else if (div.classList.contains('blogPostContent__imgContainer--left')) {
+        blockName += ' (left)';
+      }
+
+      rows.push([blockName]);
+      rows.push([img]);
+
+      div.replaceWith(WebImporter.DOMUtils.createTable(rows, document));
+    }
+  });
+};
 
 const createTOC = (main, document) => {
   const toc = main.querySelector('.blogPostContentToc');
   if (toc) {
     toc.replaceWith(WebImporter.DOMUtils.createTable([['TOC']], document));
   }
-}
+};
 
 const createRelatedPostsBlock = (main, document) => {
   const related = document.querySelectorAll('.blogPostsBlock__titleLink');
@@ -161,14 +206,14 @@ const createRelatedPostsBlock = (main, document) => {
     const table = WebImporter.DOMUtils.createTable(cells, document);
     main.append(table);
   }
-}
+};
 
 const cleanupHeadings = (main) => {
   main.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((h) => {
     // eslint-disable-next-line no-param-reassign
     h.innerHTML = h.textContent;
   });
-}
+};
 
 const makeAbsoluteLinks = (main) => {
   main.querySelectorAll('a').forEach((a) => {
@@ -237,6 +282,7 @@ export default {
     createRelatedPostsBlock(main, document);
     createEmbeds(main, document);
     createCallouts(main, document);
+    createImageBlocks(main, document);
     createTOC(main, document);
     createMetadata(main, document, html);
     makeAbsoluteLinks(main);
@@ -256,7 +302,8 @@ export default {
    * @param {String} url The url of the document being transformed.
    * @param {HTMLDocument} document The document
    */
-  generateDocumentPath: ({ url, document }) => {
+  // eslint-disable-next-line arrow-body-style
+  generateDocumentPath: ({ url }) => {
     return new URL(url).pathname.replace(/\/$/, '');
   },
-}
+};
